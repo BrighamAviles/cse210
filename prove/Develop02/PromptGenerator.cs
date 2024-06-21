@@ -5,11 +5,11 @@ namespace JournalApp
 {
     class PromptGenerator
     {
-        private List<string> prompts;
+        private List<string> _prompts;
 
         public PromptGenerator()
         {
-            prompts = new List<string>
+            _prompts = new List<string>
             {
                 "What are you grateful for today?",
                 "Describe a recent challenge you overcame.",
@@ -22,8 +22,8 @@ namespace JournalApp
         public string GetRandomPrompt()
         {
             Random random = new Random();
-            int index = random.Next(prompts.Count);
-            return prompts[index];
+            int index = random.Next(_prompts.Count);
+            return _prompts[index];
         }
     }
 }

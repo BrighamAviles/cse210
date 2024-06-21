@@ -4,15 +4,33 @@ namespace JournalApp
 {
     class Entry
     {
-        public string Prompt { get; private set; }
-        public string Content { get; private set; }
-        public DateTime Date { get; private set; }
+        private DateTime _date;
+        private string _promptText;
+        private string _entryText;
 
-        public Entry(string prompt, string content)
+        public DateTime Date => _date;
+        public string PromptText => _promptText;
+        public string EntryText => _entryText;
+
+        public Entry(string promptText, string entryText)
         {
-            Prompt = prompt;
-            Content = content;
-            Date = DateTime.Now;
+            _date = DateTime.Now;
+            _promptText = promptText;
+            _entryText = entryText;
+        }
+
+        public Entry(string promptText, string entryText, DateTime date)
+        {
+            _date = date;
+            _promptText = promptText;
+            _entryText = entryText;
+        }
+
+        public void Display()
+        {
+            Console.WriteLine($"Date: {_date}");
+            Console.WriteLine($"Prompt: {_promptText}");
+            Console.WriteLine($"Entry: {_entryText}");
         }
     }
 }
