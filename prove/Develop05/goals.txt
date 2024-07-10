@@ -1,0 +1,1 @@
+SimpleGoal:eat chicken,i need to eat chicken,40,False
